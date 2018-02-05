@@ -13,6 +13,7 @@ AllCops:
     - app/uploaders/*.rb
     - bin/update
     - bin/setup
+    - Guardfile
 
 Metrics/ModuleLength:
   Exclude:
@@ -38,3 +39,6 @@ Metrics/MethodLength:
 # The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
 Metrics/ClassLength:
   Max: 1500
+
+Style/Documentation:
+  Enabled: false
