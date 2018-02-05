@@ -1,0 +1,40 @@
+require: rubocop-rspec
+
+AllCops:
+  DisplayCopNames: true
+
+  Exclude:
+    - config/environments/*.rb
+    - config/initializers/*.rb
+    - db/*.rb
+    - db/migrate/*.rb
+    - config/initializers/*.rb
+    - spec/rails_helper.rb
+    - app/uploaders/*.rb
+    - bin/update
+    - bin/setup
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+# Commonly used screens these days easily fit more than 80 characters.
+Metrics/LineLength:
+  Max: 120
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+RSpec/MultipleExpectations:
+  Max: 2
+
+
+# Too short methods lead to extraction of single-use methods, which can make
+# the code easier to read (by naming things), but can also clutter the class
+Metrics/MethodLength:
+  Max: 20
+
+# The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
+Metrics/ClassLength:
+  Max: 1500
