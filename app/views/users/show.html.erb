@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @user.picture %>
+</p>
+
+<p>
+  <strong>Contact preference:</strong>
+  <%= @user.contact_preference %>
+</p>
+
+<p>
+  <strong>Shared screen tool:</strong>
+  <%= @user.shared_screen_tool %>
+</p>
+
+<p>
+  <strong>Fluent language:</strong>
+  <%= @user.fluent_language %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
