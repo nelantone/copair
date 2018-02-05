@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe "users/show", type: :view do
-  before(:each) do
+RSpec.describe 'users/show', type: :view do
+  before do
     @user = assign(:user, User.create!(
-      :first_name => "First Name",
-      :last_name => "Last Name",
-      :username => "Username",
-      :picture => "Picture",
-      :contact_preference => "Contact Preference",
-      :shared_screen_tool => "Shared Screen Tool",
-      :fluent_language => "Fluent Language"
+                            first_name: 'First Name',
+                            last_name: 'Last Name',
+                            username: 'Username',
+                            picture: 'Picture',
+                            contact_preference: 'Contact Preference',
+                            shared_screen_tool: 'Shared Screen Tool',
+                            fluent_language: 'Fluent Language'
     ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do # rubocop:disable RSpec/ExampleLength, RSpec/MultipleExpectations
     render
     expect(rendered).to match(/First Name/)
     expect(rendered).to match(/Last Name/)
