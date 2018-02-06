@@ -1,14 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="">
+<!--<![endif]-->
   <head>
-    <title>NEWWecopair</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'logoicon.ico' %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> COPAIR | Match & learn to code. Live, together. </title>
+    <link href="https://copair.gitlab.io/with/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!--    <link rel="stylesheet" href="//d2d3qesrx8xj6s.cloudfront.net/dist/bootsnipp.min.css?ver=872ccd9c6dce18ce6ea4d5106540f089">-->
+    <link rel="stylesheet" href="/dist/bootsnipp.min.css">
+    <%= stylesheet_link_tag "tonio_serna", media: "all" %>
   </head>
 
   <body>
+    <!--header navigation -->
+    <header class="the-header clearfix">
+      <div class="wrapper">
+        <div class="logo">
+          <a href="#splash"><img src="https://copair.gitlab.io/with/img/logo.png" alt="COPAIR"></a>
+        </div>
+
+        <a class="resToggle">
+          <span class="menu-item"></span>
+          <span class="menu-item"></span>
+          <span class="menu-item"></span>
+        </a>
+      </div>
+      <div class="nav-wrapper">
+        <nav class="the-nav">
+          <ul>
+            <li><a href="#about">What is it?</a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to "Profile", edit_user_registration_path %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "Sign in", user_session_path %></li>
+            <% end %>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><%= link_to image_tag('beta.png', tile:'We are in Beta', id:'beta') + ' Beta Home' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Header & Navigation-->
     <%= yield %>
+    <!--Home Footer====-->
+    <footer>
+      <div class="container container--footer">
+        <br />
+        <%= link_to image_tag('copairlogo3.svg', alt:'COPAIR', class:'logolnkd' )%>
+        <ul class="unstyled-list social-links">
+          <li><a href="https://twitter.com/WeCopair" target="_blank" ><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.instagram.com/wecopair" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCyp_do5v_FcCY_m4-4S_ZOg" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+        </ul>
+
+        <ul class="unstyled-list nav-footer">
+          <li><a href="#splash">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=team@we-copair.com">Email</a></li>
+        </ul>
+        </ul>
+        <br />
+        <div class="made">
+          <p>Made with <i class="fa fa-heart" aria-hidden="true"></i> in Berlin</p>
+        </div>
+      </div>
+    </footer>
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+      <!-- Font Awesome -->
+      <script src="https://use.fontawesome.com/97974f9c24.js"></script>
+      <!--scroll reveal -->
+      <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+      <!-- Form -->
+      <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/share.typeform.com/embed.js"></script>
+      <!-- My own scripts -->
+      <script src="https://copair.gitlab.io/with/js/scripts.js"></script>
   </body>
 </html>
