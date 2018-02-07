@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def home
     # @users = User.all
+    render :layout => false
   end
 
   # GET /users
@@ -16,14 +17,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   # GET /users/1.json
-  def show
-    if @user.nil?
-      respond_to do |format|
-        format.html { redirect_to root_path, notice: 'User was successfully destroyed.' }
-        format.json { head :no_content }
-      end
-    end
-  end
+  def show; end
 
   private
 

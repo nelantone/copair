@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <!--    <link rel="stylesheet" href="//d2d3qesrx8xj6s.cloudfront.net/dist/bootsnipp.min.css?ver=872ccd9c6dce18ce6ea4d5106540f089">-->
     <link rel="stylesheet" href="/dist/bootsnipp.min.css">
+    <%= stylesheet_link_tag "footer-distributed", media: "all" %>
     <%= stylesheet_link_tag "sessions_form", media: "all" %>
     <%= stylesheet_link_tag "tonio_serna", media: "all" %>
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
@@ -22,7 +23,7 @@
     <header class="the-header clearfix">
       <div class="wrapper">
         <div class="logo">
-          <a href="#splash"><img src="https://copair.gitlab.io/with/img/logo.png" alt="COPAIR"></a>
+          <%= link_to image_tag('logo.png', tile:'Copair Logo', alt:'Copair'), root_path %>
         </div>
 
         <a class="resToggle">
@@ -34,7 +35,6 @@
       <div class="nav-wrapper">
         <nav class="the-nav">
           <ul>
-            <li><a href="#about">What is it?</a></li>
             <% if user_signed_in? %>
               <li><%= link_to "Profile", edit_user_registration_path %></li>
               <li><%= link_to "Settings", '#' %></li>
@@ -43,9 +43,7 @@
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "Sign in", user_session_path %></li>
             <% end %>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><%= link_to image_tag('beta.png', tile:'We are in Beta', id:'beta') + ' Beta Home' %></li>
+            <li><%= link_to image_tag('beta.png', tile:'We are in Beta', id:'beta') + ' Beta Home', root_path %></li>
           </ul>
         </nav>
       </div>
@@ -54,6 +52,32 @@
     <!-- Header & Navigation-->
     <%= yield %>
     <!--Home Footer====-->
+    <footer class="footer-distributed">
+
+        <div class="footer-right">
+
+          <a href="https://twitter.com/WeCopair" target="_blank" ><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/wecopair" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.youtube.com/channel/UCyp_do5v_FcCY_m4-4S_ZOg" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+          <a href="https://github.com/nelantone/Copair" target="_blank"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        <div class="footer-leftr">
+          <p class="footer-links">
+            <ul class="unstyled-list nav-footer">
+              <li><i class="logo-cp"><%= link_to image_tag('logo.png', alt:'COPAIR', class:'logolnkd footer' )%></i></li>
+              <li><%= link_to "Home", root_path %>|</li>
+              <li><%= link_to "About", root_path %>|</li>
+              <li>Blog|</li>
+              <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=team@we-copair.com">Email</a>|</li>
+            </ul>
+          </p>
+          <div id="f-bottom">
+            <h6>COPAIR 2018 <i class="fa fa-copyright fa-flip-horizontal"></i> | Made with <i class="fa fa-heart" aria-hidden="true"></i> in Berlin </h6>
+          </div>
+        </div>
+      </footer>
       <!-- jQuery -->
       <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
