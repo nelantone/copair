@@ -4,6 +4,8 @@ RSpec.describe 'users/index', type: :view do
   before do
     assign(:users, [
              User.create!(
+               email: 'one@example.com',
+               password: '123456',
                first_name: 'First Name',
                last_name: 'Last Name',
                username: 'Username',
@@ -13,6 +15,8 @@ RSpec.describe 'users/index', type: :view do
                fluent_language: 'Fluent Language'
              ),
              User.create!(
+               email: 'two@example.com',
+               password: '123456',
                first_name: 'First Name',
                last_name: 'Last Name',
                username: 'Username',

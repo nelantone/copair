@@ -87,24 +87,32 @@
   <!-- Contact Form-->
 
   <section id="contact">
-      <form class="contact-form" action="https://formspree.io/antonelo@gmail.com" method="POST">
+    <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
         <section class="left">
           <div class="form-title">
             <h2>Give us some feedback, colaborate and join the Team!</h2>
           </div>
+          <%= flash[:notice] %>
           <div class="input-container">
-            <input type="text" placeholder="Your Name" />
+            <%= form.label :name %>
+            <%= form.text_field :name, class: "form-control", placeholder: "Your Name" %>
           </div>
           <div class="input-container">
-            <input type="text" placeholder="Your Email" />
+            <div class="form-group">
+              <%= form.label :email %>
+              <%= form.text_field :email, class: "form-control", placeholder: "Your Email" %>
+            </div>
           </div>
           <div class="input-container">
-            <textarea name="comments" placeholder="Your Comment" id=""></textarea>
+            <div class="form-group">
+              <%= form.label :message %>
+              <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+            </div>
           </div>
-          <button type="submit" class="btn">Send</button>
+          <%= form.submit "Send", class: "btn form_label" %>
         </section>
-    </section>
-
+    <% end %>
+  </section>
   <!--Home Footer====-->
   <footer>
     <div class="container container--footer">
@@ -132,3 +140,6 @@
       </div>
     </div>
   </footer>
+
+
+
