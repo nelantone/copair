@@ -143,11 +143,10 @@
     <%= form_with(url:"/static_pages/thank_you", method: "post", local: true) do |form| %>
       <section class="left">
         <div class="form-title">
-          <h2>Give us some feedback, or colaborate with us!</h2>
+          <h2>Give us some feedback, colaborate with us!</h2>
           <%= flash[:notice] %>
         </div>
         <div class="input-container">
-          <%= form.label :name %>
           <%= form.text_field :name, class: "form-control", placeholder: "Your Name" %>
         </div>
         <div class="input-container">

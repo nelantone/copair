@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def home
     # @users = User.all
-    render :layout => false
+    render layout: false
   end
 
   # GET /users
