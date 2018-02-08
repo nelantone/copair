@@ -140,24 +140,27 @@
   <!-- Contact Form-->
 
   <section id="contact">
-      <form class="contact-form" action="https://formspree.io/antonelo@gmail.com" method="POST">
-        <section class="left">
-          <div class="form-title">
-            <h2>Give us some feedback, colaborate and join the Team!</h2>
-          </div>
-          <div class="input-container">
-            <input type="text" placeholder="Your Name" />
-          </div>
-          <div class="input-container">
-            <input type="text" placeholder="Your Email" />
-          </div>
-          <div class="input-container">
-            <textarea name="comments" placeholder="Your Comment" id=""></textarea>
-          </div>
-          <button type="submit" class="btn">Send</button>
-        </section>
-      </form>
-    </section>
+    <%= form_with(url:"/static_pages/thank_you", method: "post", local: true) do |form| %>
+      <section class="left">
+        <div class="form-title">
+          <h2>Give us some feedback, or colaborate with us!</h2>
+          <%= flash[:notice] %>
+        </div>
+        <div class="input-container">
+          <%= form.label :name %>
+          <%= form.text_field :name, class: "form-control", placeholder: "Your Name" %>
+        </div>
+        <div class="input-container">
+          <%= form.text_field :email, class: "form-control", placeholder: "Your Email" %>
+        </div>
+        <div class="input-container">
+          <%= form.text_area :message, class: "form-control", placeholder: "Your Message", rows: 5 %>
+        </div>
+        <button type="submit" class="btn">Send</button>
+      </section>
+    <% end %>
+  </section>
+
   <!--Home Footer====-->
   <footer>
     <div class="container container--footer">
