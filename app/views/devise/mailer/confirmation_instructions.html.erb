@@ -1,5 +1,11 @@
-<p>Welcome <%= @email %>!</p>
+Hi <%= @user.first_name %>!
 
-<p>You can confirm your account email through the link below:</p>
+<p>Welcome to COPAIR !</p>
+
+<p>You can confirm your account "<%= @email %>" through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<p>Once confirmed, you can continue filling in your profile</p>
+
+<p>Your COPAIR Team</p>
