@@ -47,6 +47,9 @@ gem 'carrierwave', '~> 1.0'
 # generate fake 'foo bar' data
 gem 'faker'
 
+# Use Factory Bot for generating random test data
+gem 'factory_bot_rails'
+
 group :test do
   gem 'shoulda-matchers', '~> 3.0'
   gem 'simplecov', require: false
@@ -67,9 +70,6 @@ group :development, :test do
   gem 'rspec'
   gem 'rubocop'
   gem 'rubocop-rspec'
-
-  # Use Factory Bot for generating random test data
-  gem 'factory_bot_rails'
 end
 
 group :development do
