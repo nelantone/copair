@@ -4,10 +4,6 @@ class UserMailerPreview < ActionMailer::Preview
     UserMailer.contact_form('Marcos@example.com', 'Marcos', "Hi! I am Marcos! Hello World! Don't Panic!")
   end
 
-  def welcome
-    UserMailer.welcome(FactoryBot.create(:user))
-  end
-
   def confirmation_instructions
     DeviseMailer.confirmation_instructions(User.first, "faketoken", {})
   end
