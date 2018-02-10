@@ -10,5 +10,5 @@ class User < ApplicationRecord
   # validates :fluent_language, presence: true
   # validates :contact_preference, presence: true
   # validates :shared_screen_tool, presence: true
-  # mount_uploader :picture, ImageUploader
+  mount_uploader :picture, ImageUploader
 end
