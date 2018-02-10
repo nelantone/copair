@@ -9,4 +9,6 @@ class StaticPagesController < ApplicationController
   end
 
   def thank_you_unconfirmed; end
+
+  def user_demo; end
 end
