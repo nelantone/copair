@@ -44,6 +44,9 @@ gem 'cancancan', '~> 1.10'
 gem 'devise'
 # Use carrierwave as a simple and extremely flexible way to upload files
 gem 'carrierwave', '~> 1.0'
+# A ruby wrapper for ImageMagick or GraphicsMagick command line.
+gem 'mini_magick'
+
 # generate fake 'foo bar' data
 gem 'faker'
 

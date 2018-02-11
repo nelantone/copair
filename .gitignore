@@ -27,5 +27,6 @@ SOURCEME.md
 coverage
 .env
 
-# Public uploads
+# ignore public uploads
 public/uploads/*
+
