@@ -1,4 +1,4 @@
-after(:each) do
+after do
   if Rails.env.test?
     @document.versions.each do |v|
       store_path = File.dirname(File.dirname(v.document_file.url))

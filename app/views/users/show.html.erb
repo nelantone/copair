@@ -6,9 +6,9 @@
           <center>
             <p id="notice"><%= notice %></p>
             <% if @user.picture_url.nil? %>
-              <%= image_tag('usr_blugr.png', name:"aboutme", class:"img-circle", width:"140", height:"140"  ) %>
+              <%= image_tag('usr_blugr.png', name:"aboutme", class:"img-circle", size: "140") %>
             <% else %>
-              <%= image_tag(@user.picture, name:"aboutme", class:"img-circle", width:"140", height:"140"  ) %>
+              <%= image_tag(@user.picture, name:"aboutme", class:"img-circle", size: "140") %>
             <% end %>
             <h3 class="media-heading"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
             <h4><%= @user.username %></h4>

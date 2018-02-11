@@ -9,13 +9,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name
                                                          last_name
                                                          username
-                                                         picture])
-    # contact_preference, shared_screen_tool, fluent_language
+                                                         picture
+                                                         contact_preference
+                                                         shared_screen_tool
+                                                         fluent_language])
 
     devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name
                                                                 last_name
                                                                 username
-                                                                picture])
-    # contact_preference, shared_screen_tool, fluent_language
+                                                                picture
+                                                                contact_preference
+                                                                shared_screen_tool
+                                                                fluent_language])
   end
 end

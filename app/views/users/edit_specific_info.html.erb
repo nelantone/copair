@@ -1,0 +1,94 @@
+<section class="splash-session edit-registrations">
+  <div class="bg-splash">
+    <div class= "container">
+      </br></br>
+      <%= form_for(@user, as: current_user, url: registration_path(current_user), html: { method: :put }) do |f| %>
+        <div class="row main">
+          <div class="main-login main-center">
+          <h4>
+            <% if @user.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= "#{pluralize(@user.errors.count, "error")} prohibited this  from being saved:" %>
+                </h2>
+                <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                    <li>
+                      <%= msg %>
+                    </li>
+                    <% end %>
+                </ul>
+              </div>
+            <% end %>
+          </h4>
+           <h2>Edit:</h2>
+           <h4><strong>1. Basic Information</strong></h4>
+           <h4>2. Specific main info</h4>
+           <h4>3. Skills </h4>
+           <h4>4. Goals, Links & Resume</h4></br>
+            <form class="" method="post" action="#">
+
+              <div class="form-group">
+                <label for="picture" class="cols-sm-2 control-label">Your Picture</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                    <%= f.file_field :image, autofocus: true, class:'form-control', id:'picture',  placeholder:'Add new picture' %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact_preference" class="cols-sm-2 control-label">Contact of Preference/s</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-bullseye fa" aria-hidden="true"></i></span>
+                    <%= f.text_field :contact_preference, autofocus: true, class:'form-control', placeholder:'Example: example: whatsapp: +12.. , email: abc..@' %>
+                  </div>
+                  *Contact will be ONLY shown to your match via request
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="shared_screen_tool" class="cols-sm-2 control-label">Shared screen tool/s</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-laptop fa" aria-hidden="true"></i></span>
+                    <%= f.text_field :shared_screen_tool, autofocus: true, class:'form-control', placeholder:'Example: Teamviewer, Join.me, Skype' %>
+                  </div>
+                  *In case you didn't use before write: No
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="fluent_language" class="cols-sm-2 control-label">Fluent language/s</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa-language fa" aria-hidden="true"></i></span>
+                    <%= f.text_field :fluent_language, autofocus: true, class:'form-control', placeholder:'example: English, Spanish ...', :value => 'English,' %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <%= f.label :current_password, class:"cols-sm-2 control-label" %>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <%= f.password_field :current_password, autocomplete: "off", class:'form-control', placeholder:'Current Password' %>
+                  </div>
+                  <i>(For us, safety is first, we bother you again with your current password to confirm your changes)</i>
+                </div>
+              </div>
+
+              <div class="actions form-group">
+                <%= f.submit "Update", id: 'sign_up', class: 'btn btn-primary btn-lg btn-block login-button' %>
+              </div>
+              <%= link_to "Back", :back %>
+            </form>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
