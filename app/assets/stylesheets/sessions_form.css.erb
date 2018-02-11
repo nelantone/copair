@@ -127,13 +127,18 @@ section.splash-session{
   background-repeat: no-repeat;
   background:url(<%= asset_path('_DSD2203.jpg') %>);
   font-family: 'Oxygen', sans-serif;
-  height: 100%;
+  background-attachment: fixed;
+  background-repeat: repeat;
+  }
 }
 
 /*fix problem with height*/
 section.splash-session.edit-registrations{
-  height: 1200px;
+  height: 100%;
+  background-attachment: fixed;
+  background-repeat: repeat;
 }
+
 section.splash-session.new-registrations{
   height: 1000px;
 }

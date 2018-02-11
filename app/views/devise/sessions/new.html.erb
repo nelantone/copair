@@ -5,7 +5,8 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="row main">
             <div class="main-login main-center">
-            <h4><%= devise_error_messages! %></h4>
+             <h4><%= flash[:notice] %></h4>
+             <h4><%= devise_error_messages! %></h4>
              <h2>Log in</h2>
               <form class="" method="post" action="#">
 
