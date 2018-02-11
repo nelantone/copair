@@ -26,3 +26,6 @@
 SOURCEME.md
 coverage
 .env
+
+# Public uploads
+public/uploads/*
