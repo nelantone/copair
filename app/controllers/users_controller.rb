@@ -34,6 +34,16 @@ class UsersController < ApplicationController
                                  :picture,
                                  :contact_preference,
                                  :shared_screen_tool,
-                                 :fluent_language)
+                                 :fluent_language,
+                                 :location,
+                                 :present_skills,
+                                 :future_skills,
+                                 :average_skill_level,
+                                 :short_goal,
+                                 :medium_goal,
+                                 :long_goal,
+                                 :resume,
+                                 :code_reviewer,
+                                 :social_media_info)
   end
 end

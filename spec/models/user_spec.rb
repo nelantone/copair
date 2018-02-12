@@ -32,23 +32,5 @@ describe User do
     expect { create(:user, first_name: nil) }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
-  # it 'is having at least one fluent language' do
-  #   special_user = build(:user, :hard_to_approach_user)
-  #   expect(special_user).to be_valid
-  #   expect(special_user).not_to be_nil
-  # end
-
-  # it 'is havig at least a comment'  do
-  #   special_user = build(:user, :hard_to_approach_user, fluent_language: 'English')
-  #   expect(special_user).to be_valid
-  #   expect(special_user).not_to be_nil
-  # end
-
-  # it 'is not valid when fluent_language is empty' do
-  #   expect { create(:user, fluent_language: nil) }.to raise_error(ActiveRecord::RecordInvalid)
-  # end
-
-  # it 'is not valid when contact_preference is empty' do
-  #   expect { create(:user, contact_preference: nil) }.to raise_error(ActiveRecord::RecordInvalid)
-  # end
+  # All the rest of attributes are optional from now.
 end
