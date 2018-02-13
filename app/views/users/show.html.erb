@@ -12,7 +12,13 @@
             <% end %>
             <h3 class="media-heading"><%= "#{@user.first_name} #{@user.last_name}" %></h3>
             <h4><%= @user.username %></h4>
-            <h3 class="media-heading"><small><div class="glyphicon glyphicon-map-marker"></div></small></h3>
+            <h3 class="media-heading">
+              <small>
+                <div class="glyphicon glyphicon-map-marker">
+                  <%= @user.location.nil? ? '' : @user.location %>
+                </div>
+              </small>
+            </h3>
           </center>
             <br />
             <span><strong>Fluent Language/s: </strong></span>
