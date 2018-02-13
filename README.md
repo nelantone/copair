@@ -1,6 +1,6 @@
 # Copair
 
-#### A Free Open Source Pair Programming online matching platform, Copair Solutions is the smart path to improve your coding skills, COPAIR in nowadays in Beta: [copair.herokuapp.com](htttp://copair.herokuapp.com).
+#### A Free Open Source Pair Programming online matching platform, Copair Solutions is the smart path to improve your coding skills, COPAIR in nowadays in Beta: [copair.herokuapp.com](htttp://copair.herokuapp.com) .
 
 
 ### Prerequisites
@@ -32,7 +32,7 @@ Check our [Public COPAIR Trello](https://trello.com/b/XxXegESw/copair-public).
 
 * **Ana Afonso** - *Initial work in the full frontend home section and design* - [anAfonso](https://github.com/anAfonso)
 * **Antonio Serna Gutierrez** - *Initial and current fullstack work* - [Nelantone](https://github.com/nelantone)
-* **Pedro Pedro Gething** - Pictures, Design and part of Home translations
+* **Pedro Gething** - Pictures, Design and part of Home translations
 
 Be the first in the list of [open source contributors](https://github.com/nelantone/copair/contributors) on this project!
 
