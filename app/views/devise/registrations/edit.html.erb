@@ -8,7 +8,7 @@
             <div class="main-login main-center">
             <h4><%= devise_error_messages! %></h4>
              <h2>Edit:</h2>
-             <h4><strong>1. Basic Information</strong></h4>
+             <h4><strong>1. Settings & Basic Information</strong></h4>
              <h4><%= link_to '2. Specific main info', '#second_step' %> </h4>
              <h4><%= link_to '3. Skills', '#third_step' %></h4>
              <h4><%= link_to '4. Goals, Links & Resume', '#fourth_step' %></h4></br>
@@ -117,7 +117,6 @@
                       <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
                       <%= f.text_field :location, autofocus: true, class:'form-control', placeholder:'Example: Berlin, Germany' %>
                     </div>
-                    *Contact will be ONLY shown to your match via request
                   </div>
                 </div>
 
@@ -156,29 +155,19 @@
                 <br /><br />
                 <h3><a href="#third_step">Keep these changes & continue with Third Step: Skills</a></h3>
                 <br /><br />
-                <h3>Or just save changes from this step and continue later:</h3>
-                <br />
-                <div class="actions form-group">
-                  <%= f.submit "Update & save for now changes", id: 'sign_up', class: 'btn btn-primary btn-lg btn-block login-button' %>
-                </div>
-                <%= link_to "Back", :back %>
-              </form>
-            </div>
-          </div>
-
-          <div class="row main" id="third_step">
-            <div class="main-login main-center">
-             <h2>Edit:</h2>
-             <h4><%= link_to '1. Basic Information', '#first_step' %></h4>
-             <h4><%= link_to '2. Specific main info', '#second_step' %></h4>
-             <h4><strong>3. Skills </strong></h4>
-             <h4><%= link_to '4. Goals, Links & Resume', '#fourth_step' %></h4></br>
-
+                <h3><a href="#save">Or just save changes from this step and continue later:</a></h3>
+                <br /><br /><br />
+                <div id="third_step"></div>
+                <h2>Edit:</h2>
+                <h4><%= link_to '1. Basic Information', '#first_step' %></h4>
+                <h4><%= link_to '2. Specific main info', '#second_step' %></h4>
+                <h4><strong>3. Skills </strong></h4>
+                <h4><%= link_to '4. Goals, Links & Resume', '#fourth_step' %></h4></br>
                 <div class="form-group">
-                  <label for="picture" class="cols-sm-2 control-label">The skills you have and want to improve</label>
+                  <label for="present_skills" class="cols-sm-2 control-label">The skills you have and want to improve</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-mortar-board fa" aria-hidden="true"></i></span>
                       <%= f.text_field :present_skills, autofocus: true, class:'form-control', id:'present_skills',  placeholder:'Example: Ruby L:3, AWS L:2, Rails L:3' %>
                     </div>
                     * Add name of the Skill + L(level): from 1(beginner) to 5(advanced).<br />
@@ -190,7 +179,7 @@
                   <label for="future_skills" class="cols-sm-2 control-label">The Skills you don't have and you want to learn</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-lightbulb-o fa" aria-hidden="true"></i></span>
                       <%= f.text_field :future_skills, autofocus: true, class:'form-control', id:'future_skills',  placeholder:'Example: Elixir, AWS-EC2, Terraform' %>
                     </div>
                     * Add just name of the Skill.<br />
@@ -202,53 +191,43 @@
                   <label for="average_skill_level" class="cols-sm-2 control-label">Average Skill Level</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
-                      <%= f.text_field :average_skill_level, autofocus: true, class:'form-control', placeholder:'Example: Medium' %>
+                      <span class="input-group-addon"><i class="fa fa-line-chart fa" aria-hidden="true"></i></span>
+                      <%= f.text_field :average_skill_level, autofocus: true, class:'form-control', id:'average_skill_level', placeholder:'Example: Medium' %>
                     </div>
                     * Beginner, Medium or Advanced
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="contact_preference" class="cols-sm-2 control-label">Are you able and you want to do code reviews?</label>
+                  <label for="code_reviewer" class="cols-sm-2 control-label">Are you able and you want to do code reviews?</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-bullseye fa" aria-hidden="true"></i></span>
-                      <%= f.text_field :contact_preference, autofocus: true, class:'form-control'%>
+                      <span class="input-group-addon"><i class="  fa fa-code fa" aria-hidden="true"></i></span>
+                      <%= f.text_field :code_reviewer, autofocus: true, class:'form-control'%>
                     </div>
                   </div>
-                </div>
-
-                <div class="actions form-group">
-                  <%= f.submit "Update & save for now changes", id: 'sign_up', class: 'btn btn-primary btn-lg btn-block login-button' %>
                 </div>
 
                 <br /><br />
                 <h3><a href="#fourth_step">Keep these changes & continue with fourth & last Step: Goals, Links & Resume</a></h3>
                 <br /><br />
-                <h3>Or just save changes from this step and continue later:</h3>
+                <h3><a href="#save">Or just save changes from this step and continue later:</a></h3>
                 <br />
-                <div class="actions form-group">
-                  <%= f.submit "Update & save for now changes", id: 'sign_up', class: 'btn btn-primary btn-lg btn-block login-button' %>
-                </div>
-                <%= link_to "Back", :back %>
-              </form>
-            </div>
-          </div>
 
-          <div class="row main" id="fourth_step">
-            <div class="main-login main-center">
-             <h2>Edit:</h2>
-             <h4><%= link_to '1. Basic Information', '#first_step' %></h4>
-             <h4><%= link_to '2. Specific main info', '#second_step' %></h4>
-             <h4><%= link_to '3. Skills', '#third_step' %></h4>
-             <h4><strong>4. Goals, Links & Resume</strong></h4></br>
+                <br /><br /><br /><br />
+
+                <div id="fourth_step"></div>
+                <h2>Edit:</h2>
+                <h4><%= link_to '1. Basic Information', '#first_step' %></h4>
+                <h4><%= link_to '2. Specific main info', '#second_step' %></h4>
+                <h4><%= link_to '3. Skills', '#third_step' %></h4>
+                <h4><strong>4. Goals, Links & Resume</strong></h4><br /><br />
 
                 <div class="form-group">
                   <label for="short_goal" class="cols-sm-2 control-label">Your short term Goal</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-bicycle fa" aria-hidden="true"></i></span>
                       <%= f.text_field :short_goal, autofocus: true, class:'form-control', id:'short_goal',  placeholder:'Example: Learn Python a bit of React & start contributing to Copair open source :) ' %>
                     </div>
                   </div>
@@ -258,7 +237,7 @@
                   <label for="medium_goal" class="cols-sm-2 control-label">Your medium term Goal</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-plane fa" aria-hidden="true"></i></span>
                       <%= f.text_field :medium_goal, autofocus: true, class:'form-control', id:'medium_goal',  placeholder:'Example: Finish my project with Ruby in arduino and read this huge book about AI' %>
                     </div>
                   </div>
@@ -268,7 +247,7 @@
                   <label for="long_goal" class="cols-sm-2 control-label">Your Long term Goal</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-rocket fa" aria-hidden="true"></i></span>
                       <%= f.text_field :long_goal, autofocus: true, class:'form-control', id:'long_goal',  placeholder:'Example: Be senior developer in 2 years and do my own bussines in Robotics' %>
                     </div>
                   </div>
@@ -278,7 +257,7 @@
                   <label for="resume" class="cols-sm-2 control-label">Little Resume about you</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-map-marker fa" aria-hidden="true"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-info-circle fa" aria-hidden="true"></i></span>
                       <%= f.text_field :resume, autofocus: true, class:'form-control', placeholder:'I did many things in my life Surf teacher, guitarrist and now developer..I like Surf, Robots ha! And Star Trek!' %>
                     </div>
                   </div>
@@ -288,36 +267,18 @@
                   <label for="social_media_info" class="cols-sm-2 control-label">Add some links and social media</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="fa fa-bullseye fa" aria-hidden="true"></i></span>
+                      <span class="input-group-addon"><i class="fa fa-globe fa" aria-hidden="true"></i></span>
                       <%= f.text_field :social_media_info, autofocus: true, class:'form-control', placeholder:'My github and twitter: @username, my website & portfolio: www... '%>
                     </div>
                   </div>
                 </div>
 
+                <br /><br /><br />
                 <div class="actions form-group">
-                  <%= f.submit "Update & save for now changes", id: 'sign_up', class: 'btn btn-primary btn-lg btn-block login-button' %>
-                </div>
-
-                <br /><br />
-                <h3><a href="#fourth_step">Yay! Your profile is now complete and ready!</h3>
-                <br /><br />
-                <h3>Save your last changes!</h3>
-                <br />
-                <div class="actions form-group">
-                  <%= f.submit "Update & save for now changes", id: 'sign_up', class: 'btn btn-primary btn-lg btn-block login-button' %>
+                  <%= f.submit "Save changes", class: 'btn btn-primary btn-lg btn-block login-button', id:"save" %>
                 </div>
                 <%= link_to "Back", :back %>
               </form>
-            </div>
-          </div>
-
-          <div class="row main" id="second_step">
-            <div class="main-login main-center">
-              <h3>Cancel my account</h3>
-
-              <p>
-                Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-primary btn-lg btn-block login-button' %>
-              </p>
             </div>
           </div>
         </form>

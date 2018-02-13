@@ -15,14 +15,56 @@
             <h3 class="media-heading">
               <small>
                 <div class="glyphicon glyphicon-map-marker">
-                  <%= @user.location.nil? ? '' : @user.location %>
+                  <% if @user.location.present? %>
+                    <%= @user.location %>
+                  <% else %>
+                    [pending to answer]
+                  <% end %>
                 </div>
               </small>
             </h3>
+
+            <span><strong> Have Skills and want to improve *(Level 'L' 0.5 to 5): </strong></span><br />
+            <% if @user.present_skills.present? %>
+              <span class="label label-success">
+                <%= @user.present_skills %>
+              </span>
+            <% else %>
+              [pending to answer]
+            <% end %>
+            <br /><br />
+
+            <span><strong> Want to learn: </strong></span><br />
+            <% if @user.future_skills.present? %>
+              <span class="label label-warning">
+                <%= @user.future_skills %>
+              </span>
+            <% else %>
+              [pending to answer]
+            <% end %>
+            <br /><br />
+
+            <span><strong> Average Skill Level: </strong></span><br />
+              <% if @user.average_skill_level.present? %>
+                <span class="label label-success">
+                  <%= @user.average_skill_level %>
+                </span>
+              <% else %>
+                [pending to answer]
+              <% end %>
+            </span>
+            <br /><br />
+
           </center>
             <br />
             <span><strong>Fluent Language/s: </strong></span>
-            <span class="label label-default"><%= @user.fluent_language.upcase %></span>
+            <span class="label label-default">
+              <% if @user.fluent_language.present? %>
+                  <%= @user.fluent_language.upcase %>
+              <% else %>
+                  ENGLISH
+              <% end %>
+            </span>
             <br /><br />
 
             <span><strong> Contact Preference/s: </strong></span>
@@ -30,8 +72,39 @@
             <br /><br />
 
             <span><strong> Shared screen tool/s: </strong></span>
-            <%= @user.shared_screen_tool %>
+            <%= @user.shared_screen_tool if @user.shared_screen_tool.present? %>
             <br /><br />
+
+            <span><strong>Available for Code reviews : </strong></span>
+            <% if @user.code_reviewer.present? %>
+              <span class="label label-success">
+                <%= @user.code_reviewer %>
+              </span>
+            <% else %>
+              [pending to answer]
+            <% end %>
+            <br /><br />
+
+            <p><center><strong>GOALS</strong></center></p>
+            <div class="row">
+              <div class="col-md-4 col-xs-12 long term">
+                <p><center><strong>Long Term</strong></center></p>
+                <p> <%= @user.long_goal.present? ? @user.long_goal : '[pending to answer]' %></p>
+              </div><!-- /col -->
+              <div class="col-md-4 col-xs-12 medium term">
+                <p><center><strong>Medium Term</strong></center></p>
+                <p><%= @user.medium_goal.present? ? @user.medium_goal : '[pending to answer]' %></p>
+              </div><!-- /col -->
+              <div class="col-md-4 col-xs-12 short term">
+                <p><center><strong>Short Term</strong></center></p>
+                <p><%= @user.short_goal.present? ? @user.short_goal : '[pending to answer]' %></p>
+              </div><!-- /col -->
+            </div><!-- /row -->
+
+            <br /><br />
+            <center><strong>Resume </strong></center> <br />
+            <center><p><%= @user.resume.present? ? @user.resume : '[pending to answer]' %></p></center>
+            <br>
 
             <%= link_to 'Edit', edit_user_registration_path %> |
             <%= link_to 'Back', users_path %>
