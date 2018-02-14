@@ -192,9 +192,9 @@
                   <div class="cols-sm-10">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-line-chart fa" aria-hidden="true"></i></span>
-                      <%= f.text_field :average_skill_level, autofocus: true, class:'form-control', id:'average_skill_level', placeholder:'Example: Medium' %>
+                      <%= f.select :average_skill_level,  [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], class:'form-control', id:'average_skill_level', include_blank: true %>
                     </div>
-                    * Beginner, Medium or Advanced
+                    * Beginner [0 to 1.5], Medium [2 to 3.5] or Advanced [4 to 5]
                   </div>
                 </div>
 
@@ -202,8 +202,8 @@
                   <label for="code_reviewer" class="cols-sm-2 control-label">Are you able and you want to do code reviews?</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
-                      <span class="input-group-addon"><i class="  fa fa-code fa" aria-hidden="true"></i></span>
-                      <%= f.text_field :code_reviewer, autofocus: true, class:'form-control'%>
+                      <span class="input-group-addon"><i class="fa fa-code fa" aria-hidden="true"></i></span>
+                      <%= f.select :code_reviewer, [['yes', true],['no', false]], class:'form-control', id:'code_reviewer', include_blank: true%>
                     </div>
                   </div>
                 </div>

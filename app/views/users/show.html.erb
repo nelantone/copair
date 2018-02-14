@@ -67,10 +67,6 @@
             </span>
             <br /><br />
 
-            <span><strong> Contact Preference/s: </strong></span>
-            <span class="label label-default">Available when your request will be acepted**</span>
-            <br /><br />
-
             <span><strong> Shared screen tool/s: </strong></span>
             <%= @user.shared_screen_tool if @user.shared_screen_tool.present? %>
             <br /><br />
@@ -78,7 +74,7 @@
             <span><strong>Available for Code reviews : </strong></span>
             <% if @user.code_reviewer.present? %>
               <span class="label label-success">
-                <%= @user.code_reviewer %>
+                <%= @user.code_reviewer == true ? 'yes' : 'no' %>
               </span>
             <% else %>
               [pending to answer]
@@ -104,8 +100,9 @@
             <br /><br />
             <center><strong>Resume </strong></center> <br />
             <center><p><%= @user.resume.present? ? @user.resume : '[pending to answer]' %></p></center>
-            <br>
-
+            <br /><br />
+            <span><h5>**Direct contact preference/s will be vailable when your request will be for both sides acepted</h5></span>
+            <br /><br />
             <%= link_to 'Edit', edit_user_registration_path %> |
             <%= link_to 'Back', users_path %>
           </center>
