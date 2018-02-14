@@ -34,7 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Amazon Ruby SDK for interacting with S3.
+gem 'aws-sdk', '~> 2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -44,6 +45,9 @@ gem 'cancancan', '~> 1.10'
 gem 'devise'
 # Use carrierwave as a simple and extremely flexible way to upload files
 gem 'carrierwave', '~> 1.0'
+gem 'fog'
+# Carrierwave + S3 Gemfile
+gem 'carrierwave_direct'
 # A ruby wrapper for ImageMagick or GraphicsMagick command line.
 gem 'mini_magick'
 

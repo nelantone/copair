@@ -72,13 +72,13 @@
             <br /><br />
 
             <span><strong>Available for Code reviews : </strong></span>
-            <% if @user.code_reviewer.present? %>
+            <% if @user.code_reviewer.nil? %>
+              [pending to answer]
+            <% else %>
               <span class="label label-success">
                 <%= @user.code_reviewer == true ? 'yes' : 'no' %>
               </span>
-            <% else %>
-              [pending to answer]
-            <% end %>
+             <% end %>
             <br /><br />
 
             <p><center><strong>GOALS</strong></center></p>
