@@ -1,39 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="application_body separator">
+  <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Username</th>
-      <th>Picture</th>
-      <th>Contact preference</th>
-      <th>Shared screen tool</th>
-      <th>Fluent language</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.username %></td>
-        <td><%= user.picture %></td>
-        <td><%= user.contact_preference %></td>
-        <td><%= user.shared_screen_tool %></td>
-        <td><%= user.fluent_language %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_password_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_session_path %>
+  <center><h1>Users</h1></center>
+  <div class="row">
+    <center>
+      <% @users.each do |user| %>
+        <%= link_to user do %>
+          <div class="col-md-6 col-xs-12">
+            <% if user.picture_url.nil? %>
+              <%= image_tag('usr_blugr.png', name:"aboutme", class:"img-circle", size: "140") %>
+            <% else %>
+              <%= image_tag(user.picture, name:"aboutme", class:"img-circle", size: "140") %>
+            <% end %>
+            <h3><%= "#{user.first_name} #{user.last_name}" %></h3>
+            <%= "@#{user.username}" %>
+            <%= user.fluent_language %>
+            <br /><br />
+          </div>
+        <% end %>
+      <% end %>
+    </center>
+  </div>
+  <%= link_to 'New User', new_user_session_path %>
+</div>
