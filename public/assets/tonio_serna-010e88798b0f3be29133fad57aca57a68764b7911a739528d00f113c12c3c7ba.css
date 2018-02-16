@@ -1,0 +1,79 @@
+/* line 1, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.main-center {
+  background: #80CBC4;
+}
+
+/* line 4, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.btn-primary {
+  background-color: #eee;
+  color: #423636;
+  border: gray;
+}
+
+/* line 10, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+#contact form section .input-container label {
+  text-shadow: none;
+}
+
+/* line 14, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.the-nav li a {
+  text-decoration: none;
+}
+
+/* line 17, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.logolnkd {
+  max-width: 60px;
+}
+
+/* line 20, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+footer {
+  padding: 0;
+}
+
+/* line 23, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.main-login.main-center {
+  background: url(/assets/register-cntr-bf33d3f6101a3d8e237ed9e35804a6569b9adbe6b414a9de9a5e9484365e2df3.png);
+}
+
+/* line 26, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.the-header .logo img:hover {
+  content: url(/assets/logo-2-6d5390fff422341cc04fd19bcf066ac5f12efb97a4634e927b0067f8a6ac07e3.png);
+  width: 25%;
+  max-width: 3rem;
+  min-width: 3rem;
+}
+
+/* line 32, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+section.splash-thank_you {
+  color: white;
+  background: #80CBC4;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: url(/assets/_DSD2137-CP-203a6ecc7e3c80d72bf395d466416d224e0c56acca492342ee298afd872fdc99.jpg);
+  font-family: "Oxygen", sans-serif;
+  height: 100%;
+}
+
+/* line 42, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.application_body {
+  background-attachment: fixed;
+  background-size: cover;
+  background: url(/assets/pattern2-60145fd29b23435a55cf3161ec7c89a5687955e7f045a0e123361247bbef4f3c.svg);
+}
+
+/* line 49, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.separator {
+  padding: 7%;
+  padding-top: 50px;
+}
+
+/* line 55, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.term {
+  background-color: #E7F6F3;
+}
+
+/* line 59, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.a {
+  color: #f9fcff;
+}
