@@ -1,4 +1,4 @@
-<div class="application_body separator">
+<div class="application_body separator index">
   <p id="notice"><%= notice %></p>
 
   <center><h1>Users</h1></center>
@@ -14,12 +14,13 @@
             <% end %>
             <h3><%= "#{user.first_name} #{user.last_name}" %></h3>
             <%= "@#{user.username}" %>
-            <%= user.fluent_language %>
+            <%= user.fluent_language %><br />
+            Skills/Want to practice:<%= user.present_skills %><br />
+            Want to learn:<%= user.present_skills %><br />
             <br /><br />
           </div>
         <% end %>
       <% end %>
     </center>
   </div>
-  <%= link_to 'New User', new_user_session_path %>
 </div>

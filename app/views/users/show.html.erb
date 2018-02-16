@@ -1,4 +1,4 @@
-<div class="application_body separator">
+<div class="application_body separator show">
   <div class="fade in" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -83,17 +83,17 @@
 
             <p><center><strong>GOALS</strong></center></p>
             <div class="row">
-              <div class="col-md-4 col-xs-12 long term">
-                <p><center><strong>Long Term</strong></center></p>
-                <p> <%= @user.long_goal.present? ? @user.long_goal : '[pending to answer]' %></p>
+              <div class="col-md-4 col-xs-12 short term">
+                <p><center><strong>Short Term</strong></center></p>
+                <p><%= @user.short_goal.present? ? @user.short_goal : '[pending to answer]' %></p>
               </div><!-- /col -->
               <div class="col-md-4 col-xs-12 medium term">
                 <p><center><strong>Medium Term</strong></center></p>
                 <p><%= @user.medium_goal.present? ? @user.medium_goal : '[pending to answer]' %></p>
               </div><!-- /col -->
-              <div class="col-md-4 col-xs-12 short term">
-                <p><center><strong>Short Term</strong></center></p>
-                <p><%= @user.short_goal.present? ? @user.short_goal : '[pending to answer]' %></p>
+              <div class="col-md-4 col-xs-12 long term">
+                <p><center><strong>Long Term</strong></center></p>
+                <p> <%= @user.long_goal.present? ? @user.long_goal : '[pending to answer]' %></p>
               </div><!-- /col -->
             </div><!-- /row -->
 
@@ -103,12 +103,14 @@
             <br /><br />
             <span><h5>**Direct contact preference/s will be vailable when your request will be for both sides acepted</h5></span>
             <br /><br />
-            <%= link_to 'Edit', edit_user_registration_path %> |
-            <%= link_to 'Back', users_path %>
           </center>
         </div>
       </div>
     </div>
   </div>
+  <center>
+    <h4><%= link_to 'Edit', edit_user_registration_path if @user.present? && @user.id == current_user %> |
+    <%= link_to 'Back', users_path %></h4>
+  </center>
 </div>
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: :home
+  before_action :authenticate_user!, except: %i[home index show]
   before_action :set_user, only: %i[show]
 
   # GET /users
