@@ -26,9 +26,11 @@
 
             <span><strong> Have Skills and want to improve *(Level 'L' 0.5 to 5): </strong></span><br />
             <% if @user.present_skills.present? %>
-              <span class="label label-success">
-                <%= @user.present_skills %>
-              </span>
+              <% @user.present_skills.split(', ').each do |skill| %>
+                <span class="label label-success">
+                  <%= skill %>
+                </span>
+              <% end %>
             <% else %>
               [pending to answer]
             <% end %>
@@ -36,9 +38,11 @@
 
             <span><strong> Want to learn: </strong></span><br />
             <% if @user.future_skills.present? %>
-              <span class="label label-warning">
-                <%= @user.future_skills %>
-              </span>
+              <% @user.future_skills.split(', ').each do |skill| %>
+                <span class="label label-warning">
+                  <%= skill %>
+                </span>
+              <% end %>
             <% else %>
               [pending to answer]
             <% end %>
@@ -58,17 +62,27 @@
           </center>
             <br />
             <span><strong>Fluent Language/s: </strong></span>
-            <span class="label label-default">
               <% if @user.fluent_language.present? %>
-                  <%= @user.fluent_language.upcase %>
+                <% @user.fluent_language.split(', ').each do |language| %>
+                  <span class="label label-default">
+                    <%= language %>
+                  </span>
+                <% end %>
               <% else %>
                   ENGLISH
               <% end %>
-            </span>
             <br /><br />
 
             <span><strong> Shared screen tool/s: </strong></span>
-            <%= @user.shared_screen_tool if @user.shared_screen_tool.present? %>
+            <% if @user.shared_screen_tool.present? %>
+                <% @user.shared_screen_tool.split(', ').each do |screen_tool| %>
+                  <span class="label label-default">
+                    <%= screen_tool %>
+                  </span>
+                <% end %>
+            <% else %>
+                [pending to answer]
+            <% end %>
             <br /><br />
 
             <span><strong>Available for Code reviews : </strong></span>

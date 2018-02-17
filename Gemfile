@@ -63,6 +63,8 @@ group :test do
 end
 
 group :development, :test do
+  # Shim to load environment variables from .env into ENV in development.
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-byebug'
