@@ -88,12 +88,17 @@ a {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: repeat;
-  height: 95%;
 }
 
-/* line 71, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+/* line 70, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
 .show {
   background-size: cover;
   background-attachment: fixed;
   background-repeat: repeat;
+}
+
+/* line 76, /home/tonio/Documents/NEW_Wecopair/app/assets/stylesheets/tonio_serna.sass.erb */
+.label {
+  margin-right: 0.2em;
+  margin-bottom: 0.2em;
 }
