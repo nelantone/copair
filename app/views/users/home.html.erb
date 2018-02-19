@@ -32,7 +32,7 @@
       <div class="nav-wrapper">
         <nav class="the-nav">
           <ul>
-            <li><%= link_to "What is it?", root_path(anchor:"about") %></li>
+            <li><a href="#about">What is it?</a></li>
             <% if user_signed_in? %>
               <li><%= link_to "Profile",  user_path(current_user.id) %></li>
               <li><%= link_to "Settings",  edit_user_registration_path %></li>
@@ -41,9 +41,9 @@
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "Sign in", user_session_path %></li>
             <% end %>
-            <li><%= link_to "Team", root_path(:anchor => "team") %></li>
-            <li><%= link_to "Contact", root_path(:anchor => "contact") %></li>
-            <li><%= link_to image_tag('beta.png', tile:'We are in Beta', id:'beta') + ' Beta Home', root_path(:anchor => "splash") %></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><%= link_to image_tag('beta.png', tile:'We are in Beta', id:'beta') + ' Beta Home', '#splash' %></li>
           </ul>
         </nav>
       </div>
@@ -169,6 +169,7 @@
         <li><a href="https://twitter.com/WeCopair" target="_blank" ><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
         <li><a href="https://www.instagram.com/wecopair" target="_blank" ><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
         <li><a href="https://www.youtube.com/channel/UCyp_do5v_FcCY_m4-4S_ZOg" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+        <a href="https://github.com/nelantone/Copair" target="_blank"><i class="fa fa-github"></i></a>
       </ul>
 
       <ul class="unstyled-list nav-footer">
