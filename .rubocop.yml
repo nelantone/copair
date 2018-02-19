@@ -22,10 +22,13 @@ Metrics/ModuleLength:
 # Commonly used screens these days easily fit more than 80 characters.
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - "spec/factories/users.rb"
 
 Metrics/BlockLength:
   Exclude:
     - "**/*_spec.rb"
+    - "spec/factories/users.rb"
 
 RSpec/MultipleExpectations:
   Max: 2
@@ -35,6 +38,8 @@ RSpec/MultipleExpectations:
 # the code easier to read (by naming things), but can also clutter the class
 Metrics/MethodLength:
   Max: 20
+  Exclude:
+    - "app/controllers/application_controller.rb"
 
 # The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
 Metrics/ClassLength:
