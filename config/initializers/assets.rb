@@ -12,7 +12,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( sessions_form.css )
-Rails.application.config.assets.precompile += %w( tonio_serna.css )
-Rails.application.config.assets.precompile += %w( footer-distributed.css )
-Rails.application.config.assets.precompile += %w( scripts-ts.js )
+Rails.application.config.assets.precompile += %w( sessions_form.css tonio_serna.css footer-distributed.css scripts-ts.js )
