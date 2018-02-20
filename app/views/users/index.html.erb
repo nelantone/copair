@@ -2,22 +2,61 @@
   <p id="notice"><%= notice %></p>
 
   <center><h1>Users</h1></center>
+  <br /><br /><br />
   <div class="row">
     <center>
       <% @users.each do |user| %>
         <%= link_to user do %>
           <div class="col-md-6 col-xs-12">
-            <% if user.picture_url.nil? %>
-              <%= image_tag('usr_blugr.png', name:"aboutme", class:"img-circle", size: "140") %>
-            <% else %>
-              <%= image_tag(user.picture, name:"aboutme", class:"img-circle", size: "140") %>
-            <% end %>
-            <h3><%= "#{user.first_name} #{user.last_name}" %></h3>
-            <%= "@#{user.username}" %>
-            <%= user.fluent_language %><br />
-            Skills/Want to practice:<%= user.present_skills %><br />
-            Want to learn:<%= user.present_skills %><br />
-            <br /><br />
+            <br />
+            <div class="usr-indx"><br />
+              <% if user.picture_url.nil? %>
+                <%= image_tag('usr_blugr.png', name:"aboutme", class:"img-circle", size: "140") %>
+              <% else %>
+                <%= image_tag(user.picture, name:"aboutme", class:"img-circle", size: "140") %>
+              <% end %>
+              <h3><%= "#{user.first_name} #{user.last_name}" %> | <%= "@#{user.username}" %></h3>
+              <i class="fa-language fa" aria-hidden="true"></i>:
+              <% if user.fluent_language.present? %>
+                <% user.fluent_language.split(', ').each do |language| %>
+                  <span class="label label-default">
+                    <%= language %>
+                  </span>
+                <% end %>
+              <% else %>
+                  ENGLISH
+              <% end %><br />
+              To improve/practice <i class="fa fa-mortar-board fa" aria-hidden="true"></i>:<br />
+              <% if user.present_skills.present? %>
+                <% user.present_skills.split(', ').each do |skill| %>
+                  <span class="label label-success">
+                    <%= skill %>
+                  </span>
+                <% end %>
+              <% else %>
+                [pending to answer]
+              <% end %><br /><br />
+              Average level<i class="fa fa-line-chart fa" aria-hidden="true"></i>:
+              <% if user.average_skill_level.present? %>
+                <span class="label label-success">
+                  <%= user.average_skill_level %>
+                </span>
+              <% else %>
+                [pending to answer]
+              <% end %><br /><br />
+              Want to learn <i class="fa fa-lightbulb-o fa" aria-hidden="true"></i>:<br />
+              <% if user.future_skills.present? %>
+                <% user.future_skills.split(', ').each do |skill| %>
+                  <span class="label label-warning">
+                    <%= skill %>
+                  </span>
+                <% end %>
+              <% else %>
+                [pending to answer]
+              <% end %>
+              <br /><br /><br />
+            </div>
+            <br />
           </div>
         <% end %>
       <% end %>

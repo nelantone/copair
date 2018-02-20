@@ -18,7 +18,7 @@ unless User.find_by_email(ENV['EMAIL_TONIO'])
               contact_preference: ENV['CONTACT_TONIO'],
               shared_screen_tool: 'Teamviewer, Join.me, Skype',
               location: 'Berlin, Germany',
-              present_skills: 'Ruby L:5, Rails L:5, Git L:5, CSS L:5, HTML L:5, Linux L:5, JavaScript L:5',
+              present_skills: 'Ruby L:4, Rails L:3.5, Git L:4, CSS L:4, HTML L:4, Linux L:3, JavaScript L:3',
               future_skills: 'Ember, React, Terraform, Elixir, Phoenix, Python',
               average_skill_level: 3.5,
               short_goal: 'I am researching how to do a proper Copair form adding the skills with different levels and adding a new box evey time you add one. Do you know how to do Copair and do some pair programming with me? :)',
@@ -46,6 +46,25 @@ unless User.find_by_email(ENV['EMAIL_BEN'])
               social_media_info: 'https://github.com/yogiben, https://twitter.com/BenPeterJones',
               resume: 'Polyglot (including JavaScript). CTO & Co-founder at Bitwala')
 end
+
+unless User.find_by_email(ENV['EMAIL_HUGO'])
+  User.create(first_name: 'Hugo',
+              last_name: 'Ikta',
+              username: 'hugoichter',
+              remote_picture_url: 'https://d1qb2nb5cznatu.cloudfront.net/users/5143606-large?148984921.png' ,
+              email: ENV['EMAIL_HUGO'],
+              password: ENV['PASSWORD_HUGO'],
+              password_confirmation: ENV['PASSWORD_HUGO'],
+              fluent_language: 'Portuguese, French, English, Spanish',
+              contact_preference: ENV['EMAIL_HUGO'],
+              shared_screen_tool: 'Google hangouts, Skype, Teamviewer',
+              location: 'Medellin, Colombia',
+              present_skills: "I don't really have any technical skills yet",
+              future_skills: 'A bit of everything (at a very basic level)',
+              social_media_info: 'https://twitter.com/hugoikta',
+              resume: 'CEO & Founder at John Coaching')
+end
+
 
 unless User.find_by_email('geekymoss@example.com')
   FactoryBot.create(:user)
