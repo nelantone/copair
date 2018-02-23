@@ -1,10 +1,10 @@
 require 'faker'
 FactoryBot.define do
   factory :user do
-    first_name 'Moss' # { Faker::Name.first_name }
-    last_name 'Geeky-Beta' # {  Faker::Name.last_name }
-    username 'GeekyMoss-beta' # { Faker::Internet.unique.user_name(%w[. _ -]) }
-    email 'geekymoss@example.com' # { Faker::Internet.unique.email }
+    first_name 'Moss'
+    last_name 'Geeky-Beta'
+    username 'GeekyMoss-beta'
+    email 'geekymoss@example.com'
     password '123456'
     password_confirmation '123456'
     contact_preference 'Skype, whatssap, other'
