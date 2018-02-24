@@ -10,9 +10,10 @@ gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record & Heroku
 # **The pg gem recently released version 1.0.0 which is not yet compatible with Rails.
 # source: https://stackoverflow.com/questions/48201361/rails-application-using-postgres-adapter-cant-activate-pg
-# If you're on Rails 5, change your Gemfile's pg requirement to the following1:
+# If you're on Rails 5, change your Gemfile's pg requirement to the following:
 gem 'pg', '~> 0.18'
-
+# Virtus allows you to define attributes on classes, modules or class instances with optional information about types
+gem 'virtus'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -80,6 +81,7 @@ group :development, :test do
   gem 'rspec'
   gem 'rubocop'
   gem 'rubocop-rspec'
+  gem 'rspec-virtus'
 end
 
 group :development do
