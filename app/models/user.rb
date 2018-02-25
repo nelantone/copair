@@ -11,4 +11,6 @@ class User < ApplicationRecord
   # validates :contact_preference, presence: true
   # validates :shared_screen_tool, presence: true
   mount_uploader :picture, ImageUploader
+  has_many :matches
+  has_many :skills, through: :matches
 end

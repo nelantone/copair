@@ -2,8 +2,10 @@
 
 require 'rails_helper'
 
-describe User do
+RSpec.describe User, type: :model do
   let(:user) { build(:user) }
+
+  it { should have_many(:skills).through(:matches) }
 
   it 'has a valid factory user' do
     expect(user).to be_valid
