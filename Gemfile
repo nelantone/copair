@@ -79,9 +79,9 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
   gem 'rspec'
+  gem 'rspec-virtus'
   gem 'rubocop'
   gem 'rubocop-rspec'
-  gem 'rspec-virtus'
 end
 
 group :development do

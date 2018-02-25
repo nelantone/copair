@@ -47,3 +47,7 @@ Metrics/ClassLength:
 
 Style/Documentation:
   Enabled: false
+
+RSpec/ImplicitExpect:
+  Exclude:
+    - "spec/models/*.rb"
