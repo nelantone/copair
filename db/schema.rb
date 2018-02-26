@@ -10,23 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222145219) do
+ActiveRecord::Schema.define(version: 20180222144553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "matches", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "skill_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_matches_on_skill_id"
+    t.index ["user_id"], name: "index_matches_on_user_id"
   end
 
   create_table "skills", force: :cascade do |t|
-    t.hstore "name_and_level"
-    t.text "interest"
+    t.string "name"
+    t.float "level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name_and_level"], name: "index_skills_on_name_and_level", using: :gin
+    t.index ["level"], name: "index_skills_on_level", unique: true
+    t.index ["name"], name: "index_skills_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

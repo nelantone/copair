@@ -12,8 +12,6 @@ gem 'rails', '~> 5.1.4'
 # source: https://stackoverflow.com/questions/48201361/rails-application-using-postgres-adapter-cant-activate-pg
 # If you're on Rails 5, change your Gemfile's pg requirement to the following:
 gem 'pg', '~> 0.18'
-# Virtus allows you to define attributes on classes, modules or class instances with optional information about types
-gem 'virtus'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -79,7 +77,6 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'guard-rubocop', require: false
   gem 'rspec'
-  gem 'rspec-virtus'
   gem 'rubocop'
   gem 'rubocop-rspec'
 end
