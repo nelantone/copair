@@ -49,9 +49,12 @@ gem 'fog'
 gem 'carrierwave_direct'
 # A ruby wrapper for ImageMagick or GraphicsMagick command line.
 gem 'mini_magick'
-
 # generate fake 'foo bar' data
 gem 'faker'
+# Use Factory Bot for generating random test data
+gem 'factory_bot_rails'
+# Webpack to manage app-like JavaScript modules in Rails
+gem 'webpacker', '~> 3.4'
 
 # Use Factory Bot for generating random test data
 gem 'factory_bot_rails'
@@ -94,4 +97,4 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Ruby version for tis project:
-ruby '2.4.1'
+ruby '2.5'

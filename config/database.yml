@@ -81,7 +81,7 @@ test:
 production:
   <<: *default
   database: copair_production
-  username: wecopair
+  username: postgreql
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
 
 
