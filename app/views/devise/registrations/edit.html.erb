@@ -1,4 +1,39 @@
-<section class="splash-session edit-registrations">
+<head>
+  <script src="https://select2.org/assets/8847b4bddacab3fd8e99a5f5b14d69c9.js"></script>
+
+  <script>
+  $(document).ready(function() {
+                                  anchors.options = {
+                                      visible: 'hover',
+                                      placement: 'right',
+                                      truncate: 64
+                                  };
+                                  anchors.add('#body h2, #body h3, #body h4, #body h5');
+                               });
+  $(document).ready(function() {
+  $('pre code').each(function(i, block) {
+  hljs.highlightBlock(block);
+  });
+  });
+
+  </script>
+  <select class="js-source-states">
+    <%= skills.each do |skill| %>
+      <option value="<%= skill %>"><%= skill %></option>
+    <% end %>
+  </select>
+
+  <script type="text/javascript">
+      $(document).ready(function() {
+        // Initialize "states" example
+        var $states = $(".js-source-states");
+        var statesOptions = $states.html();
+        $states.remove();
+        $(".js-states").append(statesOptions);
+      });
+  </script>
+</head>
+<section class="splash-session edit-registrations-session">
   <div class="bg-splash">
     <div class= "container">
       </br></br>
@@ -173,20 +208,45 @@
                     * Add name of the Skill: from 1(beginner) to 5(advanced).<br />
                     ** As another example: HTML L, Git L
                     <%# @all_skills do ||%>
-                    <select class="form-control">
-                      <option selected="selected">orange</option>
-                      <option>white</option>
-                      <option>purple</option>
-                    </select>
                   </div>
                 </div>
-
                 <div class="form-group">
                   <label for="future_skills" class="cols-sm-2 control-label">The Skills you don't have and you want to learn</label>
                   <div class="cols-sm-10">
                     <div class="input-group">
                       <span class="input-group-addon"><i class="fa fa-lightbulb-o fa" aria-hidden="true"></i></span>
-                      <%= f.text_field :future_skills, autofocus: true, class:'form-control', id:'future_skills',  placeholder:'Example: Elixir, AWS-EC2, Terraform' %>
+                        <select name="future_skills" class="js-example-basic-multiple js-states form-control" multiple="multiple"></select>
+                       <script type="text/javascript">
+                       $.fn.select2.amd.require([
+                         "select2/core",
+                         "select2/utils"
+                       ], function (Select2, Utils, oldMatcher) {
+                         var $basicSingle = $(".js-example-basic-single");
+                         var $basicMultiple = $(".js-example-basic-multiple");
+
+                         $.fn.select2.defaults.set("width", "100%");
+
+                         $basicSingle.select2();
+                         $basicMultiple.select2();
+
+                         function formatState (state) {
+                           if (!state.id) {
+                             return state.text;
+                           }
+                           var $state = $(
+                             '<span>' +
+                               '<img src="vendor/images/flags/' +
+                                 state.element.value.toLowerCase() +
+                               '.png" class="img-flag" /> ' +
+                               state.text +
+                             '</span>'
+                           );
+                           return $state;
+                         };
+                       });
+
+                       </script>
+                       </p>
                     </div>
                     * Add just name of the Skill.<br />
                     ** As another example: AWS-S3,
@@ -292,3 +352,8 @@
     </div>
   </div>
 </section>
+<script>
+    $('#mySelect2').select2({
+        dropdownParent: $('#myModal')
+    });
+</script>

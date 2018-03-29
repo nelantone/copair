@@ -4,9 +4,9 @@
   <head>
     <%= favicon_link_tag 'logoicon.ico' %>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> COPAIR | Match & learn to code. Live, together. </title>
+    <link href="https://select2.org/assets/7c647dd1b60ff2b17a493d7f00a18e26.css" rel="stylesheet" />
     <link href="https://copair.gitlab.io/with/css/main.css" rel="stylesheet">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <%= stylesheet_link_tag "footer-distributed", media: "all" %>
@@ -14,8 +14,13 @@
     <%= stylesheet_link_tag "tonio_serna", media: "all" %>
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> #pending
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> # pending
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
+    </script>
   </head>
 
   <body>
@@ -80,9 +85,6 @@
           </div>
         </div>
       </footer>
-      <!-- jQuery -->
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
       <!-- Font Awesome -->
       <script src="https://use.fontawesome.com/97974f9c24.js"></script>
       <!--scroll reveal -->

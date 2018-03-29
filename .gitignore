@@ -29,6 +29,7 @@ coverage
 
 # ignore public uploads
 public/uploads/*
+public/assets/*
 
 .env/public/packs
 /public/packs-test

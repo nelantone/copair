@@ -14,6 +14,9 @@ AllCops:
     - bin/update
     - bin/setup
     - Guardfile
+    - node_modules/node-sass/src/libsass/contrib/libsass.spec
+    - node_modules/node-sass/src/libsass/extconf.rb
+    - app/helpers/users_helper.rb
 
 Metrics/ModuleLength:
   Exclude:

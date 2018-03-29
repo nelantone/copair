@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -55,9 +57,6 @@ gem 'faker'
 gem 'factory_bot_rails'
 # Webpack to manage app-like JavaScript modules in Rails
 gem 'webpacker', '~> 3.4'
-
-# Use Factory Bot for generating random test data
-gem 'factory_bot_rails'
 
 group :test do
   gem 'shoulda-matchers', '~> 3.0'

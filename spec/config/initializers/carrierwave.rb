@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 after do
   if Rails.env.test?
     @document.versions.each do |v|
