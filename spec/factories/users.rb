@@ -13,8 +13,8 @@ FactoryBot.define do
     shared_screen_tool 'Teamviewer, Join.me'
     fluent_language 'English, Spanish, Italian'
     location 'Berlin, Germany'
-    present_skills 'Ruby L:5, Rails L:5, Git L:5, CSS L:5, HTML L:5, Linux L:5, JavaScript L:5 BrainFuck L:5'
-    future_skills 'React, Terraform, Elixir, Phoenix, Python'
+    present_skills ['Ruby', 'Rails', 'Git', 'CSS / CSS3', 'HTML', 'BASH', 'JavaScript', 'Ubuntu', 'Linux Programming']
+    future_skills %w[React Terraform Elixir Phoenix Python Blockchain]
     average_skill_level '5'
     short_goal 'Have You Tried Turning It Off And On Again?'
     medium_goal "I came here to drink milk and kick ass. And I've just finished my milk."

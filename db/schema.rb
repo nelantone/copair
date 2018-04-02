@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222144553) do
+ActiveRecord::Schema.define(version: 20180401154855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,8 +58,8 @@ ActiveRecord::Schema.define(version: 20180222144553) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "location"
-    t.string "present_skills"
-    t.string "future_skills"
+    t.string "present_skills", array: true
+    t.string "future_skills", array: true
     t.float "average_skill_level"
     t.string "short_goal"
     t.string "medium_goal"

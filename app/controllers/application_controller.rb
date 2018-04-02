@@ -8,40 +8,42 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name
-                                                         last_name
-                                                         username
-                                                         picture
-                                                         contact_preference
-                                                         shared_screen_tool
-                                                         fluent_language
-                                                         location
-                                                         present_skills
-                                                         future_skills
-                                                         average_skill_level
-                                                         short_goal
-                                                         medium_goal
-                                                         long_goal
-                                                         resume
-                                                         code_reviewer
-                                                         social_media_info])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name,
+                                                       :last_name,
+                                                       :username,
+                                                       :picture,
+                                                       :contact_preference,
+                                                       :shared_screen_tool,
+                                                       :fluent_language,
+                                                       :location,
+                                                       { present_skills: [] },
+                                                       { future_skills: [] },
+                                                       :future_skills,
+                                                       :average_skill_level,
+                                                       :short_goal,
+                                                       :medium_goal,
+                                                       :long_goal,
+                                                       :resume,
+                                                       :code_reviewer,
+                                                       :social_media_info])
 
-    devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name
-                                                                last_name
-                                                                username
-                                                                picture
-                                                                contact_preference
-                                                                shared_screen_tool
-                                                                fluent_language
-                                                                location
-                                                                present_skills
-                                                                future_skills
-                                                                average_skill_level
-                                                                short_goal
-                                                                medium_goal
-                                                                long_goal
-                                                                resume
-                                                                code_reviewer
-                                                                social_media_info])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name,
+                                                              :last_name,
+                                                              :username,
+                                                              :picture,
+                                                              :contact_preference,
+                                                              :shared_screen_tool,
+                                                              :fluent_language,
+                                                              :location,
+                                                              { present_skills: [] },
+                                                              { future_skills: [] },
+                                                              :future_skills,
+                                                              :average_skill_level,
+                                                              :short_goal,
+                                                              :medium_goal,
+                                                              :long_goal,
+                                                              :resume,
+                                                              :code_reviewer,
+                                                              :social_media_info])
   end
 end

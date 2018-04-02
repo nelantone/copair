@@ -129,7 +129,6 @@ section.splash-session{
   font-family: 'Oxygen', sans-serif;
   background-attachment: fixed;
   background-repeat: repeat;
-  }
 }
 
 /*fix problem with height*/
@@ -152,4 +151,11 @@ section.splash-session.log_in,
 select#user_code_reviewer,
 select#user_average_skill_level {
   color: black;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  section.splash-session.log_in {
+    height: auto;
+  }
 }

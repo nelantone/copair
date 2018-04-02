@@ -18,8 +18,8 @@ unless User.find_by_email(ENV['EMAIL_TONIO'])
               contact_preference: ENV['CONTACT_TONIO'],
               shared_screen_tool: 'Teamviewer, Join.me, Skype',
               location: 'Berlin, Germany',
-              present_skills: 'Ruby L:4, Rails L:3.5, Git L:4, CSS L:4, HTML L:4, Linux L:3, JavaScript L:3',
-              future_skills: 'Ember, React, Terraform, Elixir, Phoenix, Python',
+              present_skills: ['Ruby', 'Rails', 'Git', 'CSS / CSS3', 'HTML', 'BASH', 'JavaScript', 'Ubuntu', 'AWS'],
+              future_skills: ['React', 'Node.js', 'Terraform', 'Elixir', 'Phoenix', 'Python'],
               average_skill_level: 3.5,
               short_goal: 'I am researching how to do a proper Copair form adding the skills with different levels and adding a new box evey time you add one. Do you know how to do Copair and do some pair programming with me? :)',
               medium_goal: 'Work with a team in a new an exciting proyect and have The first full Beta version 100% ready, With the Blog, SEO, Social Media and at least 20 users',
@@ -41,8 +41,8 @@ unless User.find_by_email(ENV['EMAIL_BEN'])
               contact_preference: ENV['CONTACT_BEN'],
               shared_screen_tool: 'Join.me',
               location: 'Berlin, Germany',
-              present_skills: 'JavaScript L:5, Web L:5, Bitcoin L:5, Blockchain L:5',
-              future_skills: 'Solidity, Haskell',
+              present_skills: ['JavaScript', 'HTML', 'CSS / CSS3', 'Blockchain'],
+              future_skills: ['Solidity', 'Haskell'],
               social_media_info: 'https://github.com/yogiben, https://twitter.com/BenPeterJones',
               resume: 'Polyglot (including JavaScript). CTO & Co-founder at Bitwala')
 end
@@ -51,7 +51,7 @@ unless User.find_by_email(ENV['EMAIL_HUGO'])
   User.create(first_name: 'Hugo',
               last_name: 'Ikta',
               username: 'hugoichter',
-              remote_picture_url: 'https://d1qb2nb5cznatu.cloudfront.net/users/5143606-large?148984921.png' ,
+              remote_picture_url: 'https://d1qb2nb5cznatu.cloudfront.net/users/5143606-large?148984921.png',
               email: ENV['EMAIL_HUGO'],
               password: ENV['PASSWORD_HUGO'],
               password_confirmation: ENV['PASSWORD_HUGO'],
@@ -59,8 +59,8 @@ unless User.find_by_email(ENV['EMAIL_HUGO'])
               contact_preference: ENV['EMAIL_HUGO'],
               shared_screen_tool: 'Google hangouts, Skype, Teamviewer',
               location: 'Medellin, Colombia',
-              present_skills: "I don't really have any technical skills yet",
-              future_skills: 'A bit of everything (at a very basic level)',
+              present_skills: ['HTML', 'Git', 'CSS / CSS3'],
+              future_skills: ['HTML', 'Git', 'CSS / CSS3'],
               social_media_info: 'https://twitter.com/hugoikta',
               resume: 'CEO & Founder at John Coaching')
 end

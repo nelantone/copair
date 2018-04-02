@@ -8,6 +8,8 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def update_resource(resource, params)
+    params['future_skills'].delete_if(&:blank?)
+    params['present_skills'].delete_if(&:blank?)
     resource.update_without_password(params)
   end
 end
